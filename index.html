@@ -111,7 +111,7 @@
     }
 
     .grid {
-      max-width: 1120px;
+      max-width: 1180px;
       margin: 20px auto 60px;
       padding: 0 24px;
       display: grid;
@@ -184,7 +184,7 @@
       position: absolute;
       top: 12px;
       right: 12px;
-      background: rgba(5, 8, 14, 0.85);
+      background: rgba(5, 8, 14, 0.88);
       border: 1px solid #00d2ff;
       color: #00d2ff;
       font-family: 'Orbitron', sans-serif;
@@ -194,6 +194,13 @@
       border-radius: 6px;
       box-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
       z-index: 2;
+    }
+
+    .card-tag.vendido {
+      background: #dc2626;
+      border-color: #ff6b6b;
+      color: #ffffff;
+      box-shadow: 0 0 14px rgba(220, 38, 38, 0.75);
     }
 
     .card-body {
@@ -227,6 +234,14 @@
       color: #00d2ff;
       text-shadow: 0 0 14px rgba(0, 210, 255, 0.65);
       margin-bottom: 12px;
+    }
+
+    .card-price.sold-label {
+      font-size: 16px;
+      letter-spacing: 1.5px;
+      color: #f87171;
+      text-shadow: 0 0 12px rgba(239, 68, 68, 0.55);
+      text-transform: uppercase;
     }
 
     .card-specs {
@@ -358,6 +373,12 @@
       margin-bottom: 12px;
     }
 
+    .modal-price.sold-label {
+      font-size: 16px;
+      color: #f87171;
+      text-transform: uppercase;
+    }
+
     .modal-specs {
       color: #cbd5e1;
       font-size: 14px;
@@ -434,103 +455,7 @@
     <p>Vehículos seleccionados con inspección técnica. Escríbenos directo y agenda tu cita hoy mismo.</p>
   </section>
 
-  <main class="grid">
-    <!-- CARRO 1: MITSUBISHI MONTERO 2015 -->
-    <article class="card">
-      <div class="card-img-wrap" onclick="abrirFicha('Mitsubishi Montero 2015', '$20.000', 'Carro1.png', 'Automático 4x4 • 86.000 Km', 'https://cdn.simpleicons.org/mitsubishi', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Mitsubishi%20Montero%202015')">
-        <div class="brand-emblem" title="Mitsubishi">
-          <img src="https://cdn.simpleicons.org/mitsubishi" alt="Logo Mitsubishi" />
-        </div>
-        <span class="card-tag">DISPONIBLE</span>
-        <img class="car-photo" src="Carro1.png" alt="Mitsubishi Montero 2015" />
-      </div>
-      <div class="card-body">
-        <div class="card-brand-label">Mitsubishi</div>
-        <div class="card-title" onclick="abrirFicha('Mitsubishi Montero 2015', '$20.000', 'Carro1.png', 'Automático 4x4 • 86.000 Km', 'https://cdn.simpleicons.org/mitsubishi', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Mitsubishi%20Montero%202015')">Montero 2015</div>
-        <div class="card-price">$20.000</div>
-        <div class="card-specs">Automático 4x4 • 86.000 Km</div>
-        <div class="card-actions">
-          <button class="btn-detail" type="button" onclick="abrirFicha('Mitsubishi Montero 2015', '$20.000', 'Carro1.png', 'Automático 4x4 • 86.000 Km', 'https://cdn.simpleicons.org/mitsubishi', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Mitsubishi%20Montero%202015')">Ver ficha básica</button>
-          <a class="btn-wa" target="_blank" rel="noopener"
-             href="https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Mitsubishi%20Montero%202015">
-            Consultar por WhatsApp
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <!-- CARRO 2: TOYOTA 4RUNNER 2023 -->
-    <article class="card">
-      <div class="card-img-wrap" onclick="abrirFicha('Toyota 4Runner 2023', '$86.500', 'Carro2.png', 'Automático 4x4 • 27.000 Km', 'https://cdn.simpleicons.org/toyota', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Toyota%204Runner%202023')">
-        <div class="brand-emblem" title="Toyota">
-          <img src="https://cdn.simpleicons.org/toyota" alt="Logo Toyota" />
-        </div>
-        <span class="card-tag">DISPONIBLE</span>
-        <img class="car-photo" src="Carro2.png" alt="Toyota 4Runner 2023" />
-      </div>
-      <div class="card-body">
-        <div class="card-brand-label">Toyota</div>
-        <div class="card-title" onclick="abrirFicha('Toyota 4Runner 2023', '$86.500', 'Carro2.png', 'Automático 4x4 • 27.000 Km', 'https://cdn.simpleicons.org/toyota', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Toyota%204Runner%202023')">4Runner 2023</div>
-        <div class="card-price">$86.500</div>
-        <div class="card-specs">Automático 4x4 • 27.000 Km</div>
-        <div class="card-actions">
-          <button class="btn-detail" type="button" onclick="abrirFicha('Toyota 4Runner 2023', '$86.500', 'Carro2.png', 'Automático 4x4 • 27.000 Km', 'https://cdn.simpleicons.org/toyota', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Toyota%204Runner%202023')">Ver ficha básica</button>
-          <a class="btn-wa" target="_blank" rel="noopener"
-             href="https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Toyota%204Runner%202023">
-            Consultar por WhatsApp
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <!-- CARRO 3: JEEP RUBICON 2025 -->
-    <article class="card">
-      <div class="card-img-wrap" onclick="abrirFicha('Jeep Rubicon 2025', '$105.000', 'Carro3.png', 'Automático 4x4 • 15.000 Km', 'https://cdn.simpleicons.org/jeep', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Jeep%20Rubicon%202025')">
-        <div class="brand-emblem" title="Jeep">
-          <img src="https://cdn.simpleicons.org/jeep" alt="Logo Jeep" />
-        </div>
-        <span class="card-tag">DISPONIBLE</span>
-        <img class="car-photo" src="Carro3.png" alt="Jeep Rubicon 2025" />
-      </div>
-      <div class="card-body">
-        <div class="card-brand-label">Jeep</div>
-        <div class="card-title" onclick="abrirFicha('Jeep Rubicon 2025', '$105.000', 'Carro3.png', 'Automático 4x4 • 15.000 Km', 'https://cdn.simpleicons.org/jeep', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Jeep%20Rubicon%202025')">Rubicon 2025</div>
-        <div class="card-price">$105.000</div>
-        <div class="card-specs">Automático 4x4 • 15.000 Km</div>
-        <div class="card-actions">
-          <button class="btn-detail" type="button" onclick="abrirFicha('Jeep Rubicon 2025', '$105.000', 'Carro3.png', 'Automático 4x4 • 15.000 Km', 'https://cdn.simpleicons.org/jeep', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Jeep%20Rubicon%202025')">Ver ficha básica</button>
-          <a class="btn-wa" target="_blank" rel="noopener"
-             href="https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Jeep%20Rubicon%202025">
-            Consultar por WhatsApp
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <!-- CARRO 4: CHEVROLET LUV D-MAX 2012 -->
-    <article class="card">
-      <div class="card-img-wrap" onclick="abrirFicha('Chevrolet Luv D-Max 2012', '$20.000', 'Carro4.png', 'Sincrónica 4x4 • 212.000 Km', 'https://cdn.simpleicons.org/chevrolet', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20la%20Chevrolet%20Luv%20D-Max%202012')">
-        <div class="brand-emblem" title="Chevrolet">
-          <img src="https://cdn.simpleicons.org/chevrolet" alt="Logo Chevrolet" />
-        </div>
-        <span class="card-tag">DISPONIBLE</span>
-        <img class="car-photo" src="Carro4.png" alt="Chevrolet Luv D-Max 2012" />
-      </div>
-      <div class="card-body">
-        <div class="card-brand-label">Chevrolet</div>
-        <div class="card-title" onclick="abrirFicha('Chevrolet Luv D-Max 2012', '$20.000', 'Carro4.png', 'Sincrónica 4x4 • 212.000 Km', 'https://cdn.simpleicons.org/chevrolet', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20la%20Chevrolet%20Luv%20D-Max%202012')">Luv D-Max 2012</div>
-        <div class="card-price">$20.000</div>
-        <div class="card-specs">Sincrónica 4x4 • 212.000 Km</div>
-        <div class="card-actions">
-          <button class="btn-detail" type="button" onclick="abrirFicha('Chevrolet Luv D-Max 2012', '$20.000', 'Carro4.png', 'Sincrónica 4x4 • 212.000 Km', 'https://cdn.simpleicons.org/chevrolet', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20la%20Chevrolet%20Luv%20D-Max%202012')">Ver ficha básica</button>
-          <a class="btn-wa" target="_blank" rel="noopener"
-             href="https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20la%20Chevrolet%20Luv%20D-Max%202012">
-            Consultar por WhatsApp
-          </a>
-        </div>
-      </div>
-    </article>
-  </main>
+  <main class="grid" id="catalog-grid"></main>
 
   <div class="modal-backdrop" id="ficha-modal" onclick="cerrarAlFondo(event)">
     <div class="modal-box">
@@ -568,9 +493,264 @@
       }
     };
 
-    function abrirFicha(titulo, precio, imagen, specs, brandLogo, waUrl) {
+    const brandLogos = {
+      Mitsubishi: 'https://cdn.simpleicons.org/mitsubishi',
+      Toyota: 'https://cdn.simpleicons.org/toyota',
+      Jeep: 'https://cdn.simpleicons.org/jeep',
+      Chevrolet: 'https://cdn.simpleicons.org/chevrolet',
+      Dodge: 'https://cdn.simpleicons.org/dodge',
+      Fiat: 'https://cdn.simpleicons.org/fiat',
+      Hyundai: 'https://cdn.simpleicons.org/hyundai',
+      Suzuki: 'https://cdn.simpleicons.org/suzuki',
+      Nissan: 'https://cdn.simpleicons.org/nissan',
+      'ZX Autos': 'https://cdn.simpleicons.org/car',
+      Chery: 'https://cdn.simpleicons.org/car',
+      Dongfeng: 'https://cdn.simpleicons.org/car',
+      Kaiyi: 'https://cdn.simpleicons.org/car',
+      Venucia: 'https://cdn.simpleicons.org/car'
+    };
+
+    const vehicles = [
+      {
+        brand: 'Mitsubishi',
+        model: 'Montero 2015',
+        price: '$20.000',
+        sold: false,
+        img: 'Carro1.png',
+        specs: 'Automático 4x4 • 86.000 Km',
+        waText: 'Hola Raptors, me interesa el carro Mitsubishi Montero 2015'
+      },
+      {
+        brand: 'Toyota',
+        model: '4Runner 2023',
+        price: '$86.500',
+        sold: false,
+        img: 'Carro2.png',
+        specs: 'Automático 4x4 • 27.000 Km',
+        waText: 'Hola Raptors, me interesa el carro Toyota 4Runner 2023'
+      },
+      {
+        brand: 'Jeep',
+        model: 'Rubicon 2025',
+        price: '$105.000',
+        sold: false,
+        img: 'Carro3.png',
+        specs: 'Automático 4x4 • 15.000 Km',
+        waText: 'Hola Raptors, me interesa el carro Jeep Rubicon 2025'
+      },
+      {
+        brand: 'Chevrolet',
+        model: 'Luv D-Max 2012',
+        price: '$20.000',
+        sold: false,
+        img: 'Carro4.png',
+        specs: 'Sincrónica 4x4 • 212.000 Km',
+        waText: 'Hola Raptors, me interesa la Chevrolet Luv D-Max 2012'
+      },
+      {
+        brand: 'Dodge',
+        model: 'Ram 2026',
+        price: '$22.000',
+        sold: false,
+        img: 'Carro5.png',
+        specs: 'Sincrónico • 3.500 Km',
+        waText: 'Hola Raptors, me interesa el Dodge Ram 2026'
+      },
+      {
+        brand: 'Chevrolet',
+        model: 'Aveo LT 2013',
+        price: '$13.500',
+        sold: false,
+        img: 'Carro6.png',
+        specs: 'Automático • 150.000 Km',
+        waText: 'Hola Raptors, me interesa el Chevrolet Aveo LT 2013'
+      },
+      {
+        brand: 'Toyota',
+        model: 'Camry 2007',
+        price: '$12.500',
+        sold: false,
+        img: 'Carro7.png',
+        specs: 'Automático • 198.000 Km',
+        waText: 'Hola Raptors, me interesa el Toyota Camry 2007'
+      },
+      {
+        brand: 'Fiat',
+        model: 'Siena 2012',
+        price: '$11.800',
+        sold: false,
+        img: 'Carro8.png',
+        specs: 'Sincrónico • 150.000 Km',
+        waText: 'Hola Raptors, me interesa el Fiat Siena 2012'
+      },
+      {
+        brand: 'ZX Autos',
+        model: 'Terralord 2025',
+        price: '$30.500',
+        sold: false,
+        img: 'Carro9.png',
+        specs: 'Sincrónico 4x4 • 47.000 Km',
+        waText: 'Hola Raptors, me interesa el ZX Autos Terralord 2025'
+      },
+      {
+        brand: 'Jeep',
+        model: 'Grand Cherokee 2007',
+        price: '$12.500',
+        sold: false,
+        img: 'Carro10.png',
+        specs: 'Automática 4x4 • 190.000 Km',
+        waText: 'Hola Raptors, me interesa el Jeep Grand Cherokee 2007'
+      },
+      {
+        brand: 'Hyundai',
+        model: 'Azera 2007',
+        price: '$10.800',
+        sold: false,
+        img: 'Carro11.png',
+        specs: 'Automático • 214.000 Km',
+        waText: 'Hola Raptors, me interesa el Hyundai Azera 2007'
+      },
+      {
+        brand: 'Chevrolet',
+        model: 'Silverado 2002',
+        price: '$8.500',
+        sold: false,
+        img: 'Carro12.png',
+        specs: 'Automática • 245.000 Km',
+        waText: 'Hola Raptors, me interesa el Chevrolet Silverado 2002'
+      },
+      {
+        brand: 'Toyota',
+        model: 'Yaris Cross 2024',
+        price: '$35.500',
+        sold: false,
+        img: 'Carro13.png',
+        specs: 'Automático 4x2 • 9.200 Km',
+        waText: 'Hola Raptors, me interesa el Toyota Yaris Cross 2024'
+      },
+      {
+        brand: 'Suzuki',
+        model: 'Baleno 2026',
+        price: '$30.000',
+        sold: false,
+        img: 'Carro14.png',
+        specs: 'Automático • 9.000 Km',
+        waText: 'Hola Raptors, me interesa el Suzuki Baleno 2026'
+      },
+      {
+        brand: 'Chery',
+        model: 'Tiggo 2014',
+        price: '$11.500',
+        sold: false,
+        img: 'Carro15.png',
+        specs: 'Sincrónico • 150.000 Km',
+        waText: 'Hola Raptors, me interesa el Chery Tiggo 2014'
+      },
+      {
+        brand: 'Dongfeng',
+        model: 'AX-7 2021',
+        price: '$21.000',
+        sold: false,
+        img: 'Carro16.png',
+        specs: 'Automática • 50.000 Km',
+        waText: 'Hola Raptors, me interesa el Dongfeng AX-7 2021'
+      },
+      {
+        brand: 'Dodge',
+        model: 'Grand Caravan 2003',
+        price: '$8.500',
+        sold: false,
+        img: 'Carro17.png',
+        specs: 'Automática • 200.000 Km',
+        waText: 'Hola Raptors, me interesa el Dodge Grand Caravan 2003'
+      },
+      {
+        brand: 'Kaiyi',
+        model: 'X3 2025',
+        price: '$28.000',
+        sold: false,
+        img: 'Carro18.png',
+        specs: 'Automática • 17.600 Km',
+        waText: 'Hola Raptors, me interesa el Kaiyi X3 2025'
+      },
+      {
+        brand: 'Venucia',
+        model: 'V-Online 2025',
+        price: '$34.500',
+        sold: false,
+        img: 'Carro19.png',
+        specs: 'Automático 4x2 • 23.000 Km',
+        waText: 'Hola Raptors, me interesa el Venucia V-Online 2025'
+      },
+      {
+        brand: 'Chevrolet',
+        model: 'Optra 2010',
+        price: 'VENDIDO',
+        sold: true,
+        img: 'Carro20.png',
+        specs: 'Automático • 163.000 Km',
+        waText: 'Hola Raptors, vi el Chevrolet Optra 2010 y quiero consultar por opciones similares'
+      },
+      {
+        brand: 'Dongfeng',
+        model: 'AX-7 2020',
+        price: 'VENDIDO',
+        sold: true,
+        img: 'Carro21.png',
+        specs: 'Automática • 150.000 Km',
+        waText: 'Hola Raptors, vi el Dongfeng AX-7 2020 y quiero consultar por opciones similares'
+      },
+      {
+        brand: 'Nissan',
+        model: 'Sylphy 2025',
+        price: 'VENDIDO',
+        sold: true,
+        img: 'Carro22.png',
+        specs: 'Automático • 14.000 Km',
+        waText: 'Hola Raptors, vi el Nissan Sylphy 2025 y quiero consultar por opciones similares'
+      }
+    ];
+
+    const grid = document.getElementById('catalog-grid');
+
+    vehicles.forEach((v) => {
+      const fullTitle = `${v.brand} ${v.model}`;
+      const logoSrc = brandLogos[v.brand] || 'https://cdn.simpleicons.org/car';
+      const waUrl = `https://wa.me/584120838297?text=${encodeURIComponent(v.waText)}`;
+      const tagClass = v.sold ? 'card-tag vendido' : 'card-tag';
+      const tagText = v.sold ? 'VENDIDO' : 'DISPONIBLE';
+      const priceClass = v.sold ? 'card-price sold-label' : 'card-price';
+      const waLabel = v.sold ? 'Consultar similares por WhatsApp' : 'Consultar por WhatsApp';
+
+      const article = document.createElement('article');
+      article.className = 'card';
+      article.innerHTML = `
+        <div class="card-img-wrap" onclick="abrirFicha('${fullTitle.replace(/'/g, "\\'")}', '${v.price}', '${v.img}', '${v.specs}', '${logoSrc}', '${waUrl}', ${v.sold})">
+          <div class="brand-emblem" title="${v.brand}">
+            <img src="${logoSrc}" alt="Logo ${v.brand}" />
+          </div>
+          <span class="${tagClass}">${tagText}</span>
+          <img class="car-photo" src="${v.img}" alt="${fullTitle}" />
+        </div>
+        <div class="card-body">
+          <div class="card-brand-label">${v.brand}</div>
+          <div class="card-title" onclick="abrirFicha('${fullTitle.replace(/'/g, "\\'")}', '${v.price}', '${v.img}', '${v.specs}', '${logoSrc}', '${waUrl}', ${v.sold})">${v.model}</div>
+          <div class="${priceClass}">${v.price}</div>
+          <div class="card-specs">${v.specs}</div>
+          <div class="card-actions">
+            <button class="btn-detail" type="button" onclick="abrirFicha('${fullTitle.replace(/'/g, "\\'")}', '${v.price}', '${v.img}', '${v.specs}', '${logoSrc}', '${waUrl}', ${v.sold})">Ver ficha básica</button>
+            <a class="btn-wa" target="_blank" rel="noopener" href="${waUrl}">${waLabel}</a>
+          </div>
+        </div>
+      `;
+      grid.appendChild(article);
+    });
+
+    function abrirFicha(titulo, precio, imagen, specs, brandLogo, waUrl, esVendido) {
       document.getElementById('modal-title').textContent = titulo;
-      document.getElementById('modal-price').textContent = precio;
+      const modalPriceEl = document.getElementById('modal-price');
+      modalPriceEl.textContent = precio;
+      modalPriceEl.className = esVendido ? 'modal-price sold-label' : 'modal-price';
       document.getElementById('modal-img').src = imagen;
       document.getElementById('modal-img').alt = titulo;
       document.getElementById('modal-brand-logo').src = brandLogo;
