@@ -322,3 +322,272 @@
       background: linear-gradient(180deg, #101724 0%, #070a10 100%);
       border: 1px solid #00d2ff;
       border-radius: 18px;
+      max-width: 540px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 0 35px rgba(0, 210, 255, 0.35);
+    }
+
+    .modal-img-wrap {
+      position: relative;
+    }
+
+    .modal-img-wrap > img.modal-car {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .modal-content {
+      padding: 22px;
+    }
+
+    .modal-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .modal-price {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      color: #00d2ff;
+      margin-bottom: 12px;
+    }
+
+    .modal-specs {
+      color: #cbd5e1;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .modal-note {
+      background: rgba(0, 168, 255, 0.08);
+      border-left: 3px solid #00d2ff;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: #94a3b8;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .modal-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-back {
+      background: transparent;
+      border: 1px solid #64748b;
+      color: #e2e8f0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .btn-back:hover {
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px;
+      border-top: 1px solid rgba(0, 168, 255, 0.25);
+      background: #040609;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    footer span {
+      color: #00d2ff;
+      font-weight: 700;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 12px 16px; }
+      .brand-tag { font-size: 14px; letter-spacing: 1.5px; }
+      .badge-location { display: none; }
+      .hero h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-box">
+      <img id="site-logo" src="logo1.png" alt="Logo Raptors Car Dealer" />
+      <span class="brand-tag">RAPTORS CAR DEALER</span>
+    </div>
+    <span class="badge-location">Caracas • Venezuela</span>
+  </header>
+
+  <section class="hero">
+    <div class="hero-eyebrow">Inventario Disponible</div>
+    <h1>Tu próximo carro en Caracas, revisado y garantizado</h1>
+    <p>Vehículos seleccionados con inspección técnica. Escríbenos directo y agenda tu cita hoy mismo.</p>
+  </section>
+
+  <main class="grid">
+    <!-- CARRO 1: MITSUBISHI MONTERO 2015 -->
+    <article class="card">
+      <div class="card-img-wrap" onclick="abrirFicha('Mitsubishi Montero 2015', '$20.000', 'Carro1.png', 'Automático 4x4 • 86.000 Km', 'https://cdn.simpleicons.org/mitsubishi', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Mitsubishi%20Montero%202015')">
+        <div class="brand-emblem" title="Mitsubishi">
+          <img src="https://cdn.simpleicons.org/mitsubishi" alt="Logo Mitsubishi" />
+        </div>
+        <span class="card-tag">DISPONIBLE</span>
+        <img class="car-photo" src="Carro1.png" alt="Mitsubishi Montero 2015" />
+      </div>
+      <div class="card-body">
+        <div class="card-brand-label">Mitsubishi</div>
+        <div class="card-title" onclick="abrirFicha('Mitsubishi Montero 2015', '$20.000', 'Carro1.png', 'Automático 4x4 • 86.000 Km', 'https://cdn.simpleicons.org/mitsubishi', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Mitsubishi%20Montero%202015')">Montero 2015</div>
+        <div class="card-price">$20.000</div>
+        <div class="card-specs">Automático 4x4 • 86.000 Km</div>
+        <div class="card-actions">
+          <button class="btn-detail" type="button" onclick="abrirFicha('Mitsubishi Montero 2015', '$20.000', 'Carro1.png', 'Automático 4x4 • 86.000 Km', 'https://cdn.simpleicons.org/mitsubishi', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Mitsubishi%20Montero%202015')">Ver ficha básica</button>
+          <a class="btn-wa" target="_blank" rel="noopener"
+             href="https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Mitsubishi%20Montero%202015">
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CARRO 2: TOYOTA 4RUNNER 2023 -->
+    <article class="card">
+      <div class="card-img-wrap" onclick="abrirFicha('Toyota 4Runner 2023', '$86.500', 'Carro2.png', 'Automático 4x4 • 27.000 Km', 'https://cdn.simpleicons.org/toyota', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Toyota%204Runner%202023')">
+        <div class="brand-emblem" title="Toyota">
+          <img src="https://cdn.simpleicons.org/toyota" alt="Logo Toyota" />
+        </div>
+        <span class="card-tag">DISPONIBLE</span>
+        <img class="car-photo" src="Carro2.png" alt="Toyota 4Runner 2023" />
+      </div>
+      <div class="card-body">
+        <div class="card-brand-label">Toyota</div>
+        <div class="card-title" onclick="abrirFicha('Toyota 4Runner 2023', '$86.500', 'Carro2.png', 'Automático 4x4 • 27.000 Km', 'https://cdn.simpleicons.org/toyota', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Toyota%204Runner%202023')">4Runner 2023</div>
+        <div class="card-price">$86.500</div>
+        <div class="card-specs">Automático 4x4 • 27.000 Km</div>
+        <div class="card-actions">
+          <button class="btn-detail" type="button" onclick="abrirFicha('Toyota 4Runner 2023', '$86.500', 'Carro2.png', 'Automático 4x4 • 27.000 Km', 'https://cdn.simpleicons.org/toyota', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Toyota%204Runner%202023')">Ver ficha básica</button>
+          <a class="btn-wa" target="_blank" rel="noopener"
+             href="https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Toyota%204Runner%202023">
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CARRO 3: JEEP RUBICON 2025 -->
+    <article class="card">
+      <div class="card-img-wrap" onclick="abrirFicha('Jeep Rubicon 2025', '$105.000', 'Carro3.png', 'Automático 4x4 • 15.000 Km', 'https://cdn.simpleicons.org/jeep', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Jeep%20Rubicon%202025')">
+        <div class="brand-emblem" title="Jeep">
+          <img src="https://cdn.simpleicons.org/jeep" alt="Logo Jeep" />
+        </div>
+        <span class="card-tag">DISPONIBLE</span>
+        <img class="car-photo" src="Carro3.png" alt="Jeep Rubicon 2025" />
+      </div>
+      <div class="card-body">
+        <div class="card-brand-label">Jeep</div>
+        <div class="card-title" onclick="abrirFicha('Jeep Rubicon 2025', '$105.000', 'Carro3.png', 'Automático 4x4 • 15.000 Km', 'https://cdn.simpleicons.org/jeep', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Jeep%20Rubicon%202025')">Rubicon 2025</div>
+        <div class="card-price">$105.000</div>
+        <div class="card-specs">Automático 4x4 • 15.000 Km</div>
+        <div class="card-actions">
+          <button class="btn-detail" type="button" onclick="abrirFicha('Jeep Rubicon 2025', '$105.000', 'Carro3.png', 'Automático 4x4 • 15.000 Km', 'https://cdn.simpleicons.org/jeep', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Jeep%20Rubicon%202025')">Ver ficha básica</button>
+          <a class="btn-wa" target="_blank" rel="noopener"
+             href="https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Jeep%20Rubicon%202025">
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CARRO 4: CHEVROLET LUV D-MAX 2012 -->
+    <article class="card">
+      <div class="card-img-wrap" onclick="abrirFicha('Chevrolet Luv D-Max 2012', '$20.000', 'Carro4.png', 'Sincrónica 4x4 • 212.000 Km', 'https://cdn.simpleicons.org/chevrolet', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20la%20Chevrolet%20Luv%20D-Max%202012')">
+        <div class="brand-emblem" title="Chevrolet">
+          <img src="https://cdn.simpleicons.org/chevrolet" alt="Logo Chevrolet" />
+        </div>
+        <span class="card-tag">DISPONIBLE</span>
+        <img class="car-photo" src="Carro4.png" alt="Chevrolet Luv D-Max 2012" />
+      </div>
+      <div class="card-body">
+        <div class="card-brand-label">Chevrolet</div>
+        <div class="card-title" onclick="abrirFicha('Chevrolet Luv D-Max 2012', '$20.000', 'Carro4.png', 'Sincrónica 4x4 • 212.000 Km', 'https://cdn.simpleicons.org/chevrolet', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20la%20Chevrolet%20Luv%20D-Max%202012')">Luv D-Max 2012</div>
+        <div class="card-price">$20.000</div>
+        <div class="card-specs">Sincrónica 4x4 • 212.000 Km</div>
+        <div class="card-actions">
+          <button class="btn-detail" type="button" onclick="abrirFicha('Chevrolet Luv D-Max 2012', '$20.000', 'Carro4.png', 'Sincrónica 4x4 • 212.000 Km', 'https://cdn.simpleicons.org/chevrolet', 'https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20la%20Chevrolet%20Luv%20D-Max%202012')">Ver ficha básica</button>
+          <a class="btn-wa" target="_blank" rel="noopener"
+             href="https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20la%20Chevrolet%20Luv%20D-Max%202012">
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div class="modal-backdrop" id="ficha-modal" onclick="cerrarAlFondo(event)">
+    <div class="modal-box">
+      <div class="modal-img-wrap">
+        <div class="brand-emblem">
+          <img id="modal-brand-logo" src="" alt="" />
+        </div>
+        <img class="modal-car" id="modal-img" src="" alt="" />
+      </div>
+      <div class="modal-content">
+        <div class="modal-title" id="modal-title"></div>
+        <div class="modal-price" id="modal-price"></div>
+        <div class="modal-specs" id="modal-specs"></div>
+        <div class="modal-note">Galería completa de ángulos y detalles técnicos en actualización. Escríbenos para pedir fotos adicionales al instante.</div>
+        <div class="modal-buttons">
+          <button class="btn-back" type="button" onclick="cerrarFicha()">← Volver al catálogo</button>
+          <a class="btn-wa" id="modal-wa" target="_blank" rel="noopener" href="#">Consultar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>RAPTORS CAR DEALER</span> • Caracas, Venezuela • Atención personalizada
+  </footer>
+
+  <script>
+    const logoImg = document.getElementById('site-logo');
+    const posiblesLogos = ['logo1.jpg', 'logo1.jpeg', 'logo1.webp', 'Logo1.png', 'Logo1.jpg', 'logo.png', 'logo.jpg'];
+    let intento = 0;
+    logoImg.onerror = function () {
+      if (intento < posiblesLogos.length) {
+        this.src = posiblesLogos[intento];
+        intento++;
+      }
+    };
+
+    function abrirFicha(titulo, precio, imagen, specs, brandLogo, waUrl) {
+      document.getElementById('modal-title').textContent = titulo;
+      document.getElementById('modal-price').textContent = precio;
+      document.getElementById('modal-img').src = imagen;
+      document.getElementById('modal-img').alt = titulo;
+      document.getElementById('modal-brand-logo').src = brandLogo;
+      document.getElementById('modal-specs').textContent = specs;
+      document.getElementById('modal-wa').href = waUrl;
+      document.getElementById('ficha-modal').classList.add('open');
+    }
+
+    function cerrarFicha() {
+      document.getElementById('ficha-modal').classList.remove('open');
+    }
+
+    function cerrarAlFondo(event) {
+      if (event.target.id === 'ficha-modal') {
+        cerrarFicha();
+      }
+    }
+  </script>
+</body>
+</html>
