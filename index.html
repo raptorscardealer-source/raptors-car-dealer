@@ -316,6 +316,147 @@
       animation: none;
     }
 
+    /* SECCIONES DE CONFIANZA, VENTA Y UBICACIÓN */
+    .info-section {
+      max-width: 1180px;
+      margin: 0 auto 56px;
+      padding: 0 24px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .section-eyebrow {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      color: #00d2ff;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .pillar-card {
+      background: linear-gradient(180deg, #0e131d 0%, #080b10 100%);
+      border: 1px solid rgba(0, 168, 255, 0.3);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+    }
+
+    .pillar-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 16px;
+      color: #00d2ff;
+      margin-bottom: 10px;
+    }
+
+    .pillar-card p {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .split-banner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+
+    .banner-box {
+      background: linear-gradient(135deg, rgba(0, 168, 255, 0.12) 0%, #090d16 70%);
+      border: 1px solid rgba(0, 210, 255, 0.45);
+      border-radius: 16px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.75);
+    }
+
+    .banner-box h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 19px;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .banner-box p {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .address-highlight {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 10px;
+      background: rgba(5, 8, 14, 0.88);
+      border-left: 3px solid #00d2ff;
+      color: #e2e8f0;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .schedule-list {
+      list-style: none;
+      margin-top: 8px;
+      color: #cbd5e1;
+    }
+
+    .schedule-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 3px 0;
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.16);
+    }
+
+    .schedule-list li:last-child {
+      border-bottom: none;
+    }
+
+    .btn-outline-neon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      text-decoration: none;
+      background: rgba(0, 168, 255, 0.14);
+      border: 1px solid #00d2ff;
+      color: #7dd3fc;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 13px 16px;
+      border-radius: 10px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-outline-neon:hover {
+      background: rgba(0, 210, 255, 0.28);
+      color: #ffffff;
+    }
+
     /* VENTANA DE FICHA BÁSICA */
     .modal-backdrop {
       display: none;
@@ -457,6 +598,65 @@
 
   <main class="grid" id="catalog-grid"></main>
 
+  <!-- POR QUÉ COMPRAR EN RAPTORS -->
+  <section class="info-section" id="por-que-raptors">
+    <div class="section-header">
+      <div class="section-eyebrow">Respaldo y Confianza</div>
+      <h2 class="section-title">¿Por qué comprar con Raptors Car Dealer?</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <h3>Inspección Técnica y Eléctrica</h3>
+        <p>Evaluamos el estado general, sistema eléctrico y funcionamiento de cada unidad para que tomes una decisión segura.</p>
+      </div>
+      <div class="pillar-card">
+        <h3>Atención Directa y Transparente</h3>
+        <p>Trato claro desde el primer mensaje, información real del kilometraje y asesoría sin rodeos en Caracas.</p>
+      </div>
+      <div class="pillar-card">
+        <h3>Citas Ágiles y Opciones Constantes</h3>
+        <p>Coordinamos tu revisión presencial rápido y, si buscas algo específico, te ayudamos a ubicarlo en nuestro inventario.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NECESITAS VENDER TU CARRO + UBICACIÓN Y HORARIOS -->
+  <section class="info-section" id="venta-y-ubicacion">
+    <div class="split-banner">
+      <div class="banner-box">
+        <div>
+          <div class="section-eyebrow">Evaluación y Consignación</div>
+          <h3>NECESITAS VENDER TU CARRO?</h3>
+          <p>Escríbenos por WhatsApp con la marca, modelo, año, kilometraje y precio estimado de tu vehículo para recibir una cotización rápida en Caracas.</p>
+        </div>
+        <a class="btn-wa" target="_blank" rel="noopener"
+           href="https://wa.me/584120838297?text=Hola%20Raptors%2C%20necesito%20cotizar%20mi%20carro%20para%20venderlo">
+          COTIZA TU CARRO
+        </a>
+      </div>
+
+      <div class="banner-box">
+        <div>
+          <div class="section-eyebrow">Visítanos</div>
+          <h3>Ubicación y horarios</h3>
+          <div class="address-highlight">
+            <div><strong>Dirección:</strong> AV. Casanova, Caracas</div>
+            <ul class="schedule-list">
+              <li><span>Lun / Jue</span><strong>8:00am - 5:00pm</strong></li>
+              <li><span>Vie</span><strong>8:00pm - 6:00pm</strong></li>
+              <li><span>Sab</span><strong>9:00am - 2:00pm</strong></li>
+              <li><span>Dom</span><strong>Cerrados</strong></li>
+            </ul>
+          </div>
+        </div>
+        <a class="btn-outline-neon" target="_blank" rel="noopener"
+           href="https://wa.me/584120838297?text=Hola%20Raptors%2C%20quiero%20recibir%20la%20direcci%C3%B3n%20exacta%20y%20el%20enlace%20de%20Google%20Maps">
+          Recibe la dirección exacta y Google maps
+        </a>
+      </div>
+    </div>
+  </section>
+
   <div class="modal-backdrop" id="ficha-modal" onclick="cerrarAlFondo(event)">
     <div class="modal-box">
       <div class="modal-img-wrap">
@@ -479,7 +679,7 @@
   </div>
 
   <footer>
-    <span>RAPTORS CAR DEALER</span> • Caracas, Venezuela • Atención personalizada
+    <span>RAPTORS CAR DEALER</span> • AV. Casanova, Caracas • Compra, venta y consignación automotriz
   </footer>
 
   <script>
