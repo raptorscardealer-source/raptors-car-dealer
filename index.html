@@ -6,13 +6,13 @@
   <title>Raptors Car Dealer — Tu próximo carro en Caracas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background-color: #05070a;
-      background-image: 
+      background-image:
         radial-gradient(circle at 50% 0%, rgba(0, 168, 255, 0.18) 0%, transparent 55%),
         radial-gradient(circle at 85% 80%, rgba(0, 119, 255, 0.1) 0%, transparent 45%);
       color: #ffffff;
@@ -115,7 +115,7 @@
       margin: 20px auto 60px;
       padding: 0 24px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
       gap: 28px;
     }
 
@@ -141,9 +141,10 @@
       position: relative;
       overflow: hidden;
       background: #000;
+      cursor: pointer;
     }
 
-    .card img {
+    .card-img-wrap > img.car-photo {
       width: 100%;
       height: 220px;
       object-fit: cover;
@@ -151,8 +152,32 @@
       transition: transform 0.45s ease;
     }
 
-    .card:hover img {
+    .card:hover .card-img-wrap > img.car-photo {
       transform: scale(1.06);
+    }
+
+    .brand-emblem {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #1e293b 0%, #05080f 90%);
+      border: 1.5px solid #00d2ff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 210, 255, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px;
+      z-index: 2;
+    }
+
+    .brand-emblem img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(0, 210, 255, 0.6));
     }
 
     .card-tag {
@@ -168,10 +193,21 @@
       padding: 4px 10px;
       border-radius: 6px;
       box-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
+      z-index: 2;
     }
 
     .card-body {
       padding: 22px;
+    }
+
+    .card-brand-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #7dd3fc;
+      text-transform: uppercase;
+      margin-bottom: 4px;
     }
 
     .card-title {
@@ -181,6 +217,7 @@
       margin-bottom: 8px;
       color: #ffffff;
       letter-spacing: 0.5px;
+      cursor: pointer;
     }
 
     .card-price {
@@ -193,17 +230,40 @@
     }
 
     .card-specs {
-      display: flex;
-      align-items: center;
-      gap: 8px;
       color: #94a3b8;
       font-size: 13px;
       font-weight: 600;
       background: rgba(255, 255, 255, 0.04);
       padding: 8px 12px;
       border-radius: 8px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       border-left: 3px solid #00a8ff;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-detail {
+      background: rgba(0, 168, 255, 0.12);
+      border: 1px solid rgba(0, 210, 255, 0.6);
+      color: #7dd3fc;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 11px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-detail:hover {
+      background: rgba(0, 210, 255, 0.25);
+      color: #ffffff;
     }
 
     @keyframes pulsoVibracion {
@@ -219,7 +279,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       text-align: center;
       background: linear-gradient(135deg, #25d366 0%, #12b854 100%);
       color: #03150a;
@@ -242,115 +301,24 @@
       animation: none;
     }
 
-    footer {
-      text-align: center;
-      padding: 28px 20px;
-      border-top: 1px solid rgba(0, 168, 255, 0.25);
-      background: #040609;
-      color: #64748b;
-      font-size: 13px;
+    /* VENTANA DE FICHA BÁSICA */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 5, 10, 0.88);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
 
-    footer span {
-      color: #00d2ff;
-      font-weight: 700;
+    .modal-backdrop.open {
+      display: flex;
     }
 
-    @media (max-width: 600px) {
-      header { padding: 12px 16px; }
-      .brand-tag { font-size: 14px; letter-spacing: 1.5px; }
-      .badge-location { display: none; }
-      .hero h1 { font-size: 24px; }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="brand-box">
-      <img id="site-logo" src="logo1.png" alt="Logo Raptors Car Dealer" />
-      <span class="brand-tag">RAPTORS CAR DEALER</span>
-    </div>
-    <span class="badge-location">Caracas • Venezuela</span>
-  </header>
-
-  <section class="hero">
-    <div class="hero-eyebrow">Inventario Disponible</div>
-    <h1>Tu próximo carro en Caracas, revisado y garantizado</h1>
-    <p>Vehículos seleccionados con inspección técnica. Escríbenos directo y agenda tu cita hoy mismo.</p>
-  </section>
-
-  <main class="grid">
-    <article class="card">
-      <div class="card-img-wrap">
-        <span class="card-tag">DISPONIBLE</span>
-        <img src="carro1.png" alt="Mitsubishi Montero 2015" />
-      </div>
-      <div class="card-body">
-        <div class="card-title">Mitsubishi Montero 2015</div>
-        <div class="card-price">$20.000</div>
-        <div class="card-specs">Automático 4x4 • 86.000 Km</div>
-        <a class="btn-wa" target="_blank" rel="noopener"
-           href="https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Mitsubishi%20Montero%202015">
-          Consultar por WhatsApp
-        </a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-img-wrap">
-        <span class="card-tag">DISPONIBLE</span>
-        <img src="carro2.png" alt="Toyota 4Runner 2023" />
-      </div>
-      <div class="card-body">
-        <div class="card-title">Toyota 4Runner 2023</div>
-        <div class="card-price">$86.500</div>
-        <div class="card-specs">Automático 4x4 • 27.000 Km</div>
-        <a class="btn-wa" target="_blank" rel="noopener"
-           href="https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Toyota%204Runner%202023">
-          Consultar por WhatsApp
-        </a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-img-wrap">
-        <span class="card-tag">DISPONIBLE</span>
-        <img src="carro3.png" alt="Jeep Rubicon 2025" />
-      </div>
-      <div class="card-body">
-        <div class="card-title">Jeep Rubicon 2025</div>
-        <div class="card-price">$105.000</div>
-        <div class="card-specs">Automático 4x4 • 15.000 Km</div>
-        <a class="btn-wa" target="_blank" rel="noopener"
-           href="https://wa.me/584120838297?text=Hola%20Raptors%2C%20me%20interesa%20el%20carro%20Jeep%20Rubicon%202025">
-          Consultar por WhatsApp
-        </a>
-      </div>
-    </article>
-  </main>
-
-  <footer>
-    <span>RAPTORS CAR DEALER</span> • Caracas, Venezuela • Atención personalizada
-  </footer>
-
-  <script>
-    const logoImg = document.getElementById('site-logo');
-    const posiblesLogos = [
-      'logo1.jpg',
-      'logo1.jpeg',
-      'logo1.webp',
-      'Logo1.png',
-      'Logo1.jpg',
-      'logo.png',
-      'logo.jpg'
-    ];
-    let intento = 0;
-    logoImg.onerror = function () {
-      if (intento < posiblesLogos.length) {
-        this.src = posiblesLogos[intento];
-        intento++;
-      }
-    };
-  </script>
-</body>
-</html>
+    .modal-box {
+      background: linear-gradient(180deg, #101724 0%, #070a10 100%);
+      border: 1px solid #00d2ff;
+      border-radius: 18px;
